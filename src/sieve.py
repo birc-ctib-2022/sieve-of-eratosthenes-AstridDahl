@@ -1,5 +1,6 @@
 """Computing primes."""
 
+n=50
 
 def sieve(n: int) -> list[int]:
     """
@@ -15,6 +16,18 @@ def sieve(n: int) -> list[int]:
     candidates = list(range(2, n + 1))
     primes = []
 
+    while candidates:
+        p=candidates[0]
+        #print(p)
+        for i in candidates:
+            if i%p == 0:
+                candidates.remove(i)
+                print(i)
+
+        primes.append(p)  
+
     # FIXME: fill out this bit
 
     return primes
+
+print(sieve(15))
