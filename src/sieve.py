@@ -18,11 +18,7 @@ def sieve(n: int) -> list[int]:
 
     while candidates:
         p=candidates[0]
-        #print(p)
-        for i in candidates:
-            if i%p == 0:
-                candidates.remove(i)
-                print(i)
+        candidates = [cand for cand in candidates if cand % p != 0]
 
         primes.append(p)  
 
